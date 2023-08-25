@@ -1,4 +1,3 @@
-# Jupyter AI
 
 Jupyter AI connects generative AI with Jupyter notebooks. Jupyter AI provides a user-friendly
 and powerful way to explore generative AI models in notebooks and improve your productivity
