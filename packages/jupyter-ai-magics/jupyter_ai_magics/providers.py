@@ -520,6 +520,7 @@ class OpenAIProvider(BaseProvider, OpenAI):
     pypi_package_deps = ["openai"]
     auth_strategy = EnvAuthStrategy(name="OPENAI_API_KEY")
 
+    @classmethod
     def is_api_key_exc(cls, e: Exception):
         """
         Determine if the exception is an OpenAI API key error.
@@ -558,6 +559,7 @@ class ChatOpenAIProvider(BaseProvider, OpenAIChat):
         self.prefix_messages.append({"role": "user", "content": prompt})
         self.prefix_messages.append({"role": "assistant", "content": output})
 
+    @classmethod
     def is_api_key_exc(cls, e: Exception):
         """
         Determine if the exception is an OpenAI API key error.
@@ -602,6 +604,7 @@ class ChatOpenAINewProvider(BaseProvider, ChatOpenAI):
         TextField(key="openai_proxy", label="Proxy (optional)", format="text"),
     ]
 
+    @classmethod
     def is_api_key_exc(cls, e: Exception):
         """
         Determine if the exception is an OpenAI API key error.
