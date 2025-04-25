@@ -310,7 +310,7 @@ class AiExtension(ExtensionApp):
             messages = change["insert"]
             for message_dict in messages:
                 message = Message(**message_dict)
-                if message.sender == BOT["username"] or message.raw_time:
+                if message.sender == BOT["username"] or message.raw_time or message.deleted:
                     continue
 
                 self.serverapp.io_loop.asyncio_loop.create_task(  # type:ignore[attr-defined]
